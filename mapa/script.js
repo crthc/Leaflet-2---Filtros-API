@@ -80,23 +80,19 @@ function render_to_map(data_markers,filter){
 	markers.clearLayers();
 
 	for (let i of data_markers){
-		if (filter=='Todos' || i.kind_food.includes(filter)){
+		if (filter=='Todos' || i.kind_food.includes(filter)){  // i.kind_food.split(",").includes(filter)
 			markerTemporal = L.marker([i.lat, i.lng]).bindPopup("<b>"+i.name+"</b><br><br>"+i.kind_food+"<br>"+i.address);
 			markers.addLayer(markerTemporal).addTo(map);
 		}
 	}
 	
 		
-	
-	
-
-	
 	/*
 	FASE 3.2
 		1) Limpio todos los marcadores
 		2) Realizo un bucle para decidir que marcadores cumplen el filtro, y los agregamos al mapa
 
-		if (filter=='Todos' || i.kind_food.split(",").includes(filter))
+		
 	*/
 			
 }
